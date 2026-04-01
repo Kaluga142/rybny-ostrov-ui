@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вход — Рыбный остров</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.htm" class="logo">Рыбный остров</a>
+      <ul class="nav-list">
+        <li><a href="index.htm">Заказы</a></li>
+        <li><a href="reports.htm">Отчётность</a></li>
+        <li><a href="admin.htm">Админ</a></li>
+        <li><a aria-current="page" href="login.htm">Вход</a></li>
+        <li><a href="register.htm">Регистрация</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-box">
+        <h1>Вход в личный кабинет</h1>
+        <p class="muted">Введите логин и пароль, чтобы просмотреть историю заказов, повторить покупку и изменить контактные данные.</p>
+        <ul class="notice-list">
+          <li>Поддерживается авторизация по логину и паролю.</li>
+          <li>При ошибке система показывает уведомление в блоке <code>.flash</code>.</li>
+          <li>Опция «Запомнить меня» ускоряет повторный вход.</li>
+        </ul>
+      </div>
+      <div class="hero-box">
+        <h2>После входа доступно</h2>
+        <div class="grid-2">
+          <div class="card stat"><strong>Заказы</strong><span class="muted">история покупок</span></div>
+          <div class="card stat"><strong>Оплата</strong><span class="muted">карта, наличные</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="flash error" role="alert" aria-live="polite" hidden id="flash">Неверный логин или пароль. Попробуйте ещё раз.</div>
+      <form method="post" action="#" novalidate>
+        <div class="form-row">
+          <label for="login">Логин</label>
+          <input id="login" name="login" type="text" autocomplete="username" required pattern="^[A-Za-z0-9]{6,}$" minlength="6" maxlength="64" title="Только латиница и цифры, не менее 6 символов.">
+        </div>
+        <div class="form-row">
+          <label for="password">Пароль</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required minlength="8" maxlength="128" title="Пароль не менее 8 символов.">
+        </div>
+        <div class="form-row">
+          <label class="checkbox">
+            <input type="checkbox" name="remember" value="1">
+            <span>Запомнить меня на этом устройстве</span>
+          </label>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="primary">Войти</button>
+          <a class="btn link" href="register.htm">Создать аккаунт</a>
+        </div>
+        <input type="hidden" name="csrf_token" value="[[to-be-filled-by-server]]">
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© Рыбный остров, 2026</small>
+  </footer>
+</body>
+</html>

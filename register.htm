@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Регистрация — Рыбный остров</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.htm" class="logo">Рыбный остров</a>
+      <ul class="nav-list">
+        <li><a href="index.htm">Заказы</a></li>
+        <li><a href="reports.htm">Отчётность</a></li>
+        <li><a href="admin.htm">Админ</a></li>
+        <li><a href="login.htm">Вход</a></li>
+        <li><a aria-current="page" href="register.htm">Регистрация</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-box">
+        <h1>Регистрация клиента</h1>
+        <p class="muted">Создайте учётную запись для оформления заказов, отслеживания покупок и получения персональных предложений.</p>
+        <ul class="notice-list">
+          <li>Логин: латиница и цифры, не менее 6 символов.</li>
+          <li>Телефон: формат <code>8(XXX)XXX-XX-XX</code>.</li>
+          <li>После регистрации можно оформлять заказы на охлаждённую и замороженную продукцию.</li>
+        </ul>
+      </div>
+      <div class="hero-box">
+        <h2>Преимущества кабинета</h2>
+        <div class="grid-2">
+          <div class="card stat"><strong>24/7</strong><span class="muted">доступ к заказам</span></div>
+          <div class="card stat"><strong>1 клик</strong><span class="muted">повторный заказ</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="flash" role="alert" aria-live="polite" hidden id="flash-area"></div>
+      <form method="post" action="#" novalidate>
+        <div class="grid-2">
+          <div class="form-row">
+            <label for="login">Логин</label>
+            <input id="login" name="login" type="text" inputmode="latin" autocomplete="username" required pattern="^[A-Za-z0-9]{6,}$" minlength="6" maxlength="64" title="Только латиница и цифры, не менее 6 символов." aria-describedby="login-help">
+            <small id="login-help" class="help">Пример: <code>fish2026</code>. Только латиница и цифры, не менее 6 символов.</small>
+          </div>
+          <div class="form-row">
+            <label for="password">Пароль</label>
+            <input id="password" name="password" type="password" autocomplete="new-password" required minlength="8" maxlength="128" title="Пароль не менее 8 символов." aria-describedby="password-help">
+            <small id="password-help" class="help">Минимум 8 символов. Проверка сложности выполняется на сервере.</small>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-row">
+            <label for="full_name">ФИО</label>
+            <input id="full_name" name="full_name" type="text" required maxlength="200" pattern="^[A-Za-zА-Яа-яЁё\- ]{5,}$" title="Только буквы, пробел и дефис. Не короче 5 символов." aria-describedby="fio-help">
+            <small id="fio-help" class="help">Разрешены русские и латинские буквы, пробел и дефис.</small>
+          </div>
+          <div class="form-row">
+            <label for="phone">Телефон</label>
+            <input id="phone" name="phone" type="tel" inputmode="numeric" required placeholder="8(999)123-45-67" pattern="^8\([0-9]{3}\)[0-9]{3}-[0-9]{2}-[0-9]{2}$" title="Формат: 8(XXX)XXX-XX-XX" aria-describedby="phone-help">
+            <small id="phone-help" class="help">Укажите номер для подтверждения заказа и обратной связи.</small>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-row">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required maxlength="255" title="Укажите корректный адрес электронной почты.">
+          </div>
+          <div class="form-row">
+            <label for="client_type">Тип клиента</label>
+            <select id="client_type" name="client_type" required>
+              <option value="">Выберите тип клиента</option>
+              <option value="retail">Розничный покупатель</option>
+              <option value="pickup">Самовывоз</option>
+              <option value="business">Оптовый клиент</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="checkbox">
+            <input type="checkbox" name="terms" required>
+            <span>Я принимаю условия обработки персональных данных и подтверждаю корректность введённых сведений.</span>
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="primary">Создать аккаунт</button>
+          <a class="btn link" href="login.htm">У меня уже есть аккаунт</a>
+        </div>
+        <input type="hidden" name="csrf_token" value="[[to-be-filled-by-server]]">
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© Рыбный остров, 2026</small>
+  </footer>
+</body>
+</html>

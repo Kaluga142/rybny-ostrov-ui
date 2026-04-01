@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Заказы и ассортимент — Рыбный остров</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.htm" class="logo">Рыбный остров</a>
+      <ul class="nav-list">
+        <li><a aria-current="page" href="index.htm">Заказы</a></li>
+        <li><a href="reports.htm">Отчётность</a></li>
+        <li><a href="admin.htm">Админ</a></li>
+        <li><a href="login.htm">Вход</a></li>
+        <li><a href="register.htm">Регистрация</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-box">
+        <h1>Оформление заказа рыбной продукции</h1>
+        <p class="muted">Страница предназначена для просмотра ассортимента, выбора товара, указания способа получения и отправки заказа.</p>
+        <div class="grid-3">
+          <div class="card stat"><strong>38</strong><span class="muted">товаров в каталоге</span></div>
+          <div class="card stat"><strong>15 мин</strong><span class="muted">среднее оформление</span></div>
+          <div class="card stat"><strong>3</strong><span class="muted">варианта оплаты</span></div>
+        </div>
+      </div>
+      <div class="hero-box">
+        <h2>Параметры заказа</h2>
+        <form method="get" action="#">
+          <div class="form-row">
+            <label for="category">Категория</label>
+            <select id="category" name="category" required>
+              <option value="">Выберите категорию</option>
+              <option value="fresh">Свежая рыба</option>
+              <option value="frozen">Замороженная продукция</option>
+              <option value="semi">Полуфабрикаты</option>
+            </select>
+          </div>
+          <div class="grid-2">
+            <div class="form-row">
+              <label for="pickup-date">Дата получения</label>
+              <input id="pickup-date" name="pickup_date" type="date" required>
+            </div>
+            <div class="form-row">
+              <label for="order-type">Формат заказа</label>
+              <select id="order-type" name="order_type" required>
+                <option value="">Выберите формат</option>
+                <option value="pickup">Самовывоз</option>
+                <option value="delivery">Доставка</option>
+                <option value="reserve">Бронирование товара</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="primary">Показать ассортимент</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="grid-admin">
+      <div>
+        <section class="card">
+          <h2>Популярные позиции</h2>
+          <p class="muted">Выберите товары для заказа. Сумма и список покупок обновляются справа автоматически.</p>
+          <div class="grid-products">
+            <article class="card product-card">
+              <span class="tag">Свежая рыба</span>
+              <h3>Форель охлаждённая</h3>
+              <p class="muted">Стейк весовой, фасовка от 0.5 кг.</p>
+              <div class="price">890 ₽</div>
+              <label class="checkbox"><input class="product-check" type="checkbox" data-name="Форель охлаждённая" data-price="890"><span>Добавить в заказ</span></label>
+            </article>
+            <article class="card product-card">
+              <span class="tag">Полуфабрикаты</span>
+              <h3>Котлеты рыбные</h3>
+              <p class="muted">Домашняя рецептура, упаковка 1 кг.</p>
+              <div class="price">420 ₽</div>
+              <label class="checkbox"><input class="product-check" type="checkbox" data-name="Котлеты рыбные" data-price="420"><span>Добавить в заказ</span></label>
+            </article>
+            <article class="card product-card">
+              <span class="tag">Замороженная</span>
+              <h3>Креветки северные</h3>
+              <p class="muted">Фасовка 800 г, премиальное качество.</p>
+              <div class="price">760 ₽</div>
+              <label class="checkbox"><input class="product-check" type="checkbox" data-name="Креветки северные" data-price="760"><span>Добавить в заказ</span></label>
+            </article>
+            <article class="card product-card">
+              <span class="tag">Свежая рыба</span>
+              <h3>Сёмга филе</h3>
+              <p class="muted">Охлаждённое филе, без костей.</p>
+              <div class="price">1 240 ₽</div>
+              <label class="checkbox"><input class="product-check" type="checkbox" data-name="Сёмга филе" data-price="1240"><span>Добавить в заказ</span></label>
+            </article>
+            <article class="card product-card">
+              <span class="tag">Деликатесы</span>
+              <h3>Икра горбуши</h3>
+              <p class="muted">Стеклянная банка 250 г.</p>
+              <div class="price">1 580 ₽</div>
+              <label class="checkbox"><input class="product-check" type="checkbox" data-name="Икра горбуши" data-price="1580"><span>Добавить в заказ</span></label>
+            </article>
+            <article class="card product-card">
+              <span class="tag">Полуфабрикаты</span>
+              <h3>Пельмени с судаком</h3>
+              <p class="muted">Упаковка 700 г, ручная лепка.</p>
+              <div class="price">530 ₽</div>
+              <label class="checkbox"><input class="product-check" type="checkbox" data-name="Пельмени с судаком" data-price="530"><span>Добавить в заказ</span></label>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <aside class="card order-summary">
+        <h2>Сводка заказа</h2>
+        <ol class="summary-list" id="order-list">
+          <li>Товары ещё не выбраны.</li>
+        </ol>
+        <div class="summary-total">Итого: <span id="order-total">0 ₽</span></div>
+        <form method="post" action="#" style="margin-top: 1rem;">
+          <div class="form-row">
+            <label for="selected-items">Выбранные товары</label>
+            <input id="selected-items" name="selected_items" type="text" readonly placeholder="Список будет заполнен автоматически">
+          </div>
+          <div class="form-row">
+            <label for="payment">Способ оплаты</label>
+            <select id="payment" name="payment_method" required>
+              <option value="">Выберите способ оплаты</option>
+              <option value="cash">Наличные</option>
+              <option value="card">Банковская карта</option>
+              <option value="invoice">Перевод по реквизитам</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="customer-email">E-mail для подтверждения</label>
+            <input id="customer-email" name="email" type="email" required placeholder="client@example.ru">
+          </div>
+          <div class="form-row">
+            <label for="comment">Комментарий к заказу</label>
+            <textarea id="comment" name="comment" rows="4" placeholder="Например: подготовить заказ к 18:00"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="primary">Оформить заказ</button>
+          </div>
+        </form>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© Рыбный остров, 2026</small>
+  </footer>
+</body>
+</html>
